@@ -1,11 +1,25 @@
 import Preferences
 
 public struct ImageCell: JinxCell {
-    public let name: String
-    public let key: String
-    public let defaultValue: String
-    public let allowingPhotos: Bool
-    public let allowingVideos: Bool
+    private let name: String
+    private let key: String
+    private let defaultValue: String
+    private let allowingPhotos: Bool
+    private let allowingVideos: Bool
+    
+    public init(
+        name: String,
+        key: String,
+        defaultValue: String,
+        allowingPhotos: Bool,
+        allowingVideos: Bool
+    ) {
+        self.name = name
+        self.key = key
+        self.defaultValue = defaultValue
+        self.allowingPhotos = allowingPhotos
+        self.allowingVideos = allowingVideos
+    }
     
     public func specifier(for target: PSListController) -> PSSpecifier {
         let imageCell: PSSpecifier = .preferenceSpecifierNamed(

@@ -1,10 +1,22 @@
 import Preferences
 
 public struct SliderCell: JinxCell {
-    public let name: String
-    public let key: String
-    public let defaultValue: Int
-    public let range: Range<Int>
+    private let name: String
+    private let key: String
+    private let defaultValue: Int
+    private let range: Range<Int>
+    
+    public init(
+        name: String,
+        key: String,
+        defaultValue: Int,
+        range: Range<Int>
+    ) {
+        self.name = name
+        self.key = key
+        self.defaultValue = defaultValue
+        self.range = range
+    }
     
     public func specifier(for target: PSListController) -> PSSpecifier {
         let sliderCell: PSSpecifier = .preferenceSpecifierNamed(

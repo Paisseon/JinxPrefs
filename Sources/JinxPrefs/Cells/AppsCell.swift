@@ -1,9 +1,19 @@
 import Preferences
 
 public struct AppsCell: JinxCell {
-    public let name: String
-    public let key: String
-    public let defaultValue: Bool
+    private let name: String
+    private let key: String
+    private let defaultValue: Bool
+    
+    public init(
+        name: String,
+        key: String,
+        defaultValue: Bool
+    ) {
+        self.name = name
+        self.key = key
+        self.defaultValue = defaultValue
+    }
     
     public func specifier(for target: PSListController) -> PSSpecifier {
         let appsCell: PSSpecifier = .preferenceSpecifierNamed(

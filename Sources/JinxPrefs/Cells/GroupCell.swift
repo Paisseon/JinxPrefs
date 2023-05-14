@@ -1,10 +1,16 @@
 import Preferences
 
 public struct GroupCell: JinxCell {
-    public let name: String
-    public let footerText: String
+    private let name: String
+    private let footerText: String
     
-    public init() {}
+    public init(
+        name: String,
+        footerText: String
+    ) {
+        self.name = name
+        self.footerText = footerText
+    }
     
     public func specifier(for target: PSListController) -> PSSpecifier {
         let groupCell: PSSpecifier = .emptyGroup()
