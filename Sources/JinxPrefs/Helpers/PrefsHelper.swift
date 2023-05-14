@@ -50,7 +50,7 @@ public struct PrefsHelper {
     public static func write() {
         #if JINX_ROOTLESS
         let dict: [String: Any] = read()
-        let url: URL = .init(fileURLWithPath: "/var/jb/var/mobile/Library/Preferences/\(domain as CFString).plist")
+        let url: URL = .init(fileURLWithPath: "/var/jb/var/mobile/Library/Preferences/\(Metadata.package as CFString).plist")
         let data: Data? = try? PropertyListSerialization.data(fromPropertyList: dict, format: .binary, options: 0)
         try? data?.write(to: url)
         #endif
