@@ -1,6 +1,6 @@
 import UIKit
 
-struct PrefsHelper {
+public struct PrefsHelper {
     private static func safeBitCast<T>(
         _ ptr: OpaquePointer?,
         to type: T.Type
@@ -39,7 +39,7 @@ struct PrefsHelper {
         return cfDict as? [String: Any] ?? [:]
     }
     
-    static func getValue(
+    public static func getValue(
         for key: String,
         fallback: Any? = nil
     ) -> Any? {
@@ -47,7 +47,7 @@ struct PrefsHelper {
         return dict[key] ?? fallback
     }
     
-    static func write() {
+    public static func write() {
         #if JINX_ROOTLESS
         let dict: [String: Any] = read()
         let url: URL = .init(fileURLWithPath: "/var/jb/var/mobile/Library/Preferences/\(domain as CFString).plist")
@@ -56,7 +56,7 @@ struct PrefsHelper {
         #endif
     }
     
-    static func respring(withView view: UIView) {
+    public static func respring(withView view: UIView) {
         typealias RelaunchType = @convention(c) (AnyObject, Selector, String, Int, URL) -> NSObject
         let actionSel: Selector = sel_registerName("actionWithReason:options:targetURL:")
         

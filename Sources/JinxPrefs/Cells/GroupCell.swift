@@ -4,6 +4,8 @@ public struct GroupCell: JinxCell {
     public let name: String
     public let footerText: String
     
+    public init() {}
+    
     public func specifier(for target: PSListController) -> PSSpecifier {
         let groupCell: PSSpecifier = .emptyGroup()
         
