@@ -26,11 +26,12 @@ public struct ColourCell: JinxCell {
             edit: nil
         )
         
+        colourCell.setProperty(objc_lookUpClass("HBColorPickerTableCell"), forKey: "cellClass")
         colourCell.identifier = key
         colourCell.setProperty(key, forKey: "key")
         colourCell.setProperty(defaultValue, forKey: "default")
         colourCell.setProperty(Metadata.package, forKey: "defaults")
-        colourCell.setProperty(Metadata.package + ".prefsChanged", forKey: "PostNotification")
+        colourCell.setProperty(Metadata.package + ".prefschanged", forKey: "PostNotification")
         colourCell.setProperty(true, forKey: "showAlphaSlider")
         
         return colourCell
