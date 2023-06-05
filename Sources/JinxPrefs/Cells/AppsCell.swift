@@ -4,15 +4,18 @@ public struct AppsCell: JinxCell {
     private let name: String
     private let key: String
     private let defaultValue: Bool
+    private let sections: String
     
     public init(
         name: String,
         key: String,
-        defaultValue: Bool
+        defaultValue: Bool,
+        sections: String = "Visible"
     ) {
         self.name = name
         self.key = key
         self.defaultValue = defaultValue
+        self.sections = sections
     }
     
     public func specifier(for target: PSListController) -> PSSpecifier {
@@ -34,7 +37,7 @@ public struct AppsCell: JinxCell {
         appsCell.setProperty(true, forKey: "showIdentifiersAsSubtitle")
         appsCell.setProperty(true, forKey: "includeIdentifiersInSearch")
         appsCell.setProperty(true, forKey: "useSearchBar")
-        appsCell.setProperty(NSArray(array: [["sectionType": "User"]]), forKey: "sections")
+        appsCell.setProperty(NSArray(array: [["sectionType": sections]]), forKey: "sections")
         
         return appsCell
     }

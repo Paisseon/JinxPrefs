@@ -1,5 +1,7 @@
 import Preferences
 
+// Thanks to Soppra for the original ObjC version of this view
+
 public final class HeaderView: UITableViewCell {
     private let tweakLabel: UILabel = .init()
     private let devLabel: UILabel = .init()
@@ -35,12 +37,12 @@ public final class HeaderView: UITableViewCell {
         tweakLabel.alpha = 0
         devLabel.alpha = 0
         
-        tweakLabel.layer.shadowColor = UIColor.black.cgColor
+        tweakLabel.layer.shadowColor = UIColor.darkGray.cgColor
         tweakLabel.layer.shadowOffset = CGSize(width: 0, height: 2)
         tweakLabel.layer.shadowOpacity = 0.5
         tweakLabel.layer.shadowRadius = 2
         
-        devLabel.layer.shadowColor = UIColor.black.cgColor
+        devLabel.layer.shadowColor = UIColor.darkGray.cgColor
         devLabel.layer.shadowOffset = CGSize(width: 0, height: 2)
         devLabel.layer.shadowOpacity = 0.5
         devLabel.layer.shadowRadius = 2

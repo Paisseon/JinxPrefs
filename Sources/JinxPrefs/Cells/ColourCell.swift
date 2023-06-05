@@ -4,15 +4,18 @@ public struct ColourCell: JinxCell {
     private let name: String
     private let key: String
     private let defaultValue: String
+    private let allowAlpha: Bool
     
     public init(
         name: String,
         key: String,
-        defaultValue: String
+        defaultValue: String,
+        allowAlpha: Bool = true
     ) {
         self.name = name
         self.key = key
         self.defaultValue = defaultValue
+        self.allowAlpha = allowAlpha
     }
     
     public func specifier(for target: PSListController) -> PSSpecifier {
@@ -32,7 +35,7 @@ public struct ColourCell: JinxCell {
         colourCell.setProperty(defaultValue, forKey: "default")
         colourCell.setProperty(Metadata.package, forKey: "defaults")
         colourCell.setProperty(Metadata.package + ".prefschanged", forKey: "PostNotification")
-        colourCell.setProperty(true, forKey: "showAlphaSlider")
+        colourCell.setProperty(allowAlpha, forKey: "showAlphaSlider")
         
         return colourCell
     }
