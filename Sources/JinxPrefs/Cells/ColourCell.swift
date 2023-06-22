@@ -24,7 +24,7 @@ public struct ColourCell: JinxCell {
             target: target,
             set: #selector(PSListController.setPreferenceValue(_:specifier:)),
             get: #selector(PSListController.readPreferenceValue(_:)),
-            detail: objc_lookUpClass("HBColorPickerTableCell"),
+            detail: objc_lookUpClass("HBColorPickerCircleView"),
             cell: .linkCell,
             edit: nil
         )
